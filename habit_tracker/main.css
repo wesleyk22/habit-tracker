@@ -1,0 +1,226 @@
+/* 
+    Wesley Keller
+    CIS-255 
+    Integrated Programming Project CSS file
+*/ 
+
+/* General styling */
+h1 {
+    font-weight: bold;
+}
+body{
+    background-color: #b6c8e0;  
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+form {
+    background-color: #9aa4b3;
+    border-radius: 0.5em;
+    padding: 0.2em;
+}
+/* Exclude the delete button and reset button */
+input[type="submit"]:not(.delete-button, .reset-button){
+    width: fit-content;
+    padding: 0.5em;
+}
+input {
+    width: 12em;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    padding: 0.2em;
+    margin: 0.2em;
+}
+table {
+    background-color: #6d7a8c;  
+    border-radius: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    padding: 0.5em;
+    
+}
+th {
+    font-size: 1.2em;
+}
+td {
+   background-color: #b6c8e0;  
+   border-radius: 0.2em;
+   font-size: 1.2em;
+   padding: 0.4em;
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #9eaec2;
+}
+.delete-button{
+    width: 2.5em;
+    height: 2.5em;
+    padding: 1.5em;
+    margin: 0em;
+    background: url('images/delete.png'); /* delete icon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Scale the icon to fit within the button */
+    border-radius: 0.8em;
+    background-color: #b6c8e0;  
+}
+.reset-button{
+    width: 2.5em;
+    height: 2.5em;
+    padding: 1.5em;
+    margin: 0em;
+    background: url('images/undo.png'); /* delete icon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Scale the icon to fit within the button */
+    border-radius: 0.8em;
+    background-color: #b6c8e0;  
+}
+.smallbutton {
+    width: 4em;
+    padding: 0.4em;
+    margin: 0em;
+}
+.error {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.logout-button {
+    width: 8%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+#subtract, #add, #subtract_time, #add_time {
+    width: 5em;
+}
+/*  */
+
+
+/* Navigation bar */
+.navbar li {
+    height: 45px;
+    display: flex;
+}
+.navbar {
+    width: 95%; /* This has to be 95% not 100% otherwise it's not centered correctly */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2em;
+    border-radius: 10px;
+    background-color: #778394;
+}
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbutton {
+    background-color: #8d9fb8;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0.2em;
+    text-decoration: none;
+    color: white;
+    border-color: black;
+    font-family: "Comic Sans MS";
+    font-size: 1em;
+    font-weight: 110;
+    padding: 0.5em;
+    width: auto;
+    margin: auto;
+}
+.navbutton:hover{
+    background-color: #5d6978;
+    cursor: pointer;
+}
+/*  */
+
+/* Calendar styling */
+.calendar-day {
+    background-color: #9aa4b3;
+    border-radius: 0.5em;
+}
+.today {
+    border-width: 0.2em;
+    border-style: solid;
+    border-color: rgb(234, 255, 139);
+}
+.grayed-calendar-day {
+    background-color: #5c5c5ca4;
+    border-radius: 0.5em;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*  7 columns per row  */
+    column-gap: 0.2em;
+    row-gap: 0.2em;
+}
+/*  */
+
+/* Dark mode styling, three levels of darkness, one two and three */
+.dark-mode-one {
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+.dark-mode-two {
+    background-color: rgb(63, 63, 63);
+    color: white;
+}
+.dark-mode-three {
+    background-color: rgb(110, 110, 110);
+    color: white;
+}
+.dark-mode-three[type="submit"]:hover{
+    cursor: pointer;
+    background-color: rgb(155, 155, 155);
+}
+.dark-mode-three.navbutton:hover{
+    cursor: pointer;
+    background-color: rgb(155, 155, 155);
+}
+/*  */
+
+/* If the screen is smaller then 1300px of width */
+@media only screen and (max-width: 1300px) {
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        
+        column-gap: 0.2em;
+        row-gap: 0.2em;
+    }
+}
+/*  */
+
+/* If the screen is smaller then 732px of width */
+@media only screen and (max-width: 732px) {
+    .calendar {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 0.2em;
+        row-gap: 0.2em;
+    }
+}
+/*  */
+
+/* If the screen is smaller then 560px of width */
+@media only screen and (max-width: 560px) {
+    .calendar {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 0.2em;
+        row-gap: 0.2em;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    nav a {
+        padding: 1em;
+    }
+}
+/*  */
